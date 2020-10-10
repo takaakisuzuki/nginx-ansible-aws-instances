@@ -32,7 +32,7 @@
       resource: "{{ item.id }}"
       region: "{{ region }}"
       tags:
-        Name: "{{ item.private_dns_name }}"
+        Name: "{{ tagName }}-{{ item.private_dns_name }}"
       state: present
     loop: "{{ lb_instances.instances }}"
 
